@@ -113,7 +113,7 @@ class DatabricksDialect(default.DefaultDialect):
     def denormalize_name(self, name):
         if not name:
             return name
-        return name.lower()
+        return name.upper()
 
     def get_columns(self, connection, table_name, schema=None, **kwargs):
         """Return information about columns in `table_name`.
