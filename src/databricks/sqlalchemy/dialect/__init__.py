@@ -83,6 +83,7 @@ class DatabricksDialect(default.DefaultDialect):
     supports_sane_rowcount: bool = False
     non_native_boolean_check_constraint: bool = False
     supports_native_boolean: bool = True
+    requires_name_normalize = True
 
     @classmethod
     def dbapi(cls):
