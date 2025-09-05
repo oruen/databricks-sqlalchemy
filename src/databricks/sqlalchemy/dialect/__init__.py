@@ -105,6 +105,16 @@ class DatabricksDialect(default.DefaultDialect):
 
         return [], kwargs
 
+    def normalize_name(self, name):
+        if not name:
+            return name
+        return name.upper()
+
+    def denormalize_name(self, name):
+        if not name:
+            return name
+        return name.lower()
+
     def get_columns(self, connection, table_name, schema=None, **kwargs):
         """Return information about columns in `table_name`.
 
